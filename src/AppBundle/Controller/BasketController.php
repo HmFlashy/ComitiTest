@@ -98,6 +98,8 @@ class BasketController extends Controller
     		$em->persist($fruitTemp);
     	}
     	$em->flush();
+    	$basket = [];
+    	$session->set('basket', $basket);
     	$response->setStatusCode(Response::HTTP_OK);
         return $response;
     }
