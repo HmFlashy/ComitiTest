@@ -12,7 +12,7 @@ var fruits = [];
 
 function init(){
 	$.ajax({
-			url: "http://localhost:80/basket/session",
+			url: "basket/session",
 			crossDomain: true,
 			beforeSend: function( xhr ) {
 				xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
@@ -45,7 +45,7 @@ $('li').on('click', function(){
 $('#buttonAdd').on('click', function(){
 	if(index != -1){
 		$.ajax({
-			url: "http://localhost:80/basket/1/" + index,
+			url: "basket/1/" + index,
 			crossDomain: true,
 			beforeSend: function( xhr ) {
 				xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
@@ -75,7 +75,7 @@ $('#butPayer').on('click', function(){
 	if($('#totPrice').html() != "0"){
 		$.ajax({
 			type: "POST",
-			url: "http://localhost:80/basket/store",
+			url: "basket/store",
 			data: fruits,
 			crossDomain: true,
 			beforeSend: function( xhr ) {
