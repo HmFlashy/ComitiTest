@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>La maison du fruit </title>
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <div id="entete">
+            <h1>{{"la maison du fruit" |upper}} </h1>
+        </div>
+        <div id="fruits">
+            <ul>
+                {% for fruit in fruits %}<li id="{{ fruit.getId() }}">{{fruit.getnomfruit()}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div id="add">
+            <input type="button" id="buttonAdd" name="addFruit" value="Ajouter au panier">
+        </div>
+        <div id="rollBasket">
+            <h2 id="titrePanier">Panier</h2>
+            <table id="Panier">
+                <tr>
+                    <th>Fruit</th><th>Price</th>
+                </tr>
+                {% for article in basket %}
+                <tr class="fruit" id="{{article['id']}}"><td>{{ article["name"] }} x {{ article["number"] }}</td><td>{{ article["prixHt"] * article["number"] }}</td></tr>
+                {% endfor %}
+            </table>
+        </div>
+        <dir id="checkout"><input type="button" id="butPayer" name="Checkout" value="Payer"></dir>
+        
+
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/myScript.js"></script>
+    </body>
+</html>
