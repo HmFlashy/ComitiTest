@@ -1,4 +1,1 @@
-stageProject
-============
-
-A Symfony project created on May 2, 2017, 4:36 pm.
+# Test de programmation, panier de fruits
